@@ -1,0 +1,266 @@
+.authPage {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(11, 31, 58, 0.85),
+      rgba(11, 31, 58, 0.9)
+    ),
+    url("/images/hero/goa-beach-sunset-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 480px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 24px;
+
+  padding: 40px;
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.signupCard {
+  max-width: 620px;
+  padding: 44px;
+  background:
+    linear-gradient(145deg, rgba(248, 246, 240, 0.12), rgba(248, 246, 240, 0.05)),
+    rgba(11, 31, 58, 0.68);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.authEyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #d4af37;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.authCard h1 {
+  color: #f8f6f0;
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.authCard p {
+  color: rgba(248, 246, 240, 0.85);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.authForm input {
+  width: 100%;
+  padding: 14px 18px;
+
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+
+  outline: none;
+  font-size: 1rem;
+
+  transition: all 0.3s ease;
+}
+
+.authForm input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.authForm input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+.authForm button {
+  background: #d4af37;
+  color: #0b1f3a;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.authForm button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+.authForm button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+  transform: none;
+  box-shadow: none;
+}
+
+.signupSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.signupSteps span {
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.stepActive {
+  background: rgba(212, 175, 55, 0.18);
+  color: #f8f6f0;
+}
+
+.stepDone {
+  background: #d4af37;
+  color: #0b1f3a;
+}
+
+.stepMuted {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(248, 246, 240, 0.62);
+}
+
+.otpTabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  border-radius: 16px;
+  background: rgba(7, 24, 45, 0.62);
+}
+
+.otpTabs button {
+  padding: 12px 14px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.otpTabs button:hover {
+  transform: none;
+}
+
+.otpTab {
+  background: transparent !important;
+  color: rgba(248, 246, 240, 0.78) !important;
+  border: 1px solid transparent !important;
+}
+
+.otpTabActive {
+  background: #d4af37 !important;
+  color: #0b1f3a !important;
+  border: 1px solid #d4af37 !important;
+}
+
+.verificationRow {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 12px;
+  align-items: center;
+}
+
+.verifiedBadge {
+  justify-self: start;
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: rgba(212, 175, 55, 0.14);
+  color: #f8f6f0;
+  font-weight: 800;
+}
+
+.accountFields {
+  display: grid;
+  gap: 16px;
+  animation: fadeUp 0.28s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.authLink {
+  margin-top: 25px;
+  color: #f8f6f0;
+}
+
+.authLink a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.authLink a:hover {
+  text-decoration: underline;
+}
+
+.backHome {
+  display: inline-block;
+  margin-top: 20px;
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.backHome:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .authCard {
+    padding: 30px 20px;
+  }
+
+  .authCard h1 {
+    font-size: 1.8rem;
+  }
+
+  .signupSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .verificationRow {
+    grid-template-columns: 1fr;
+  }
+}

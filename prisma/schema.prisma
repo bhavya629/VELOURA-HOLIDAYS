@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  phone     String
+  password  String
+  role      String   @default("CUSTOMER")
+  createdAt DateTime @default(now())
+
+  bookings Booking[]
+}
+
+model Booking {
+  id               Int      @id @default(autoincrement())
+  userId           Int
+  packageId        String
+  packageName      String
+  travellers       Int
+  travelDate       DateTime
+  amount           Float
+  status           String   @default("Pending")
+  paymentStatus    String   @default("Paid")
+  invoiceNumber    String?  @unique
+  bookingReference String?  @unique
+  createdAt        DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model TravelPackage {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  name        String
+  duration    String
+  price       Float
+  image       String
+  description String   @db.Text
+  status      String   @default("Active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Hotel {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  name        String
+  location    String
+  type        String
+  rating      Int
+  price       Float
+  image       String
+  description String   @db.Text
+  status      String   @default("Active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Destination {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  name        String
+  region      String
+  price       Float
+  image       String
+  description String   @db.Text
+  status      String   @default("Active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
